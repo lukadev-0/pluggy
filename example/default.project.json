@@ -1,0 +1,13 @@
+{
+    "name": "Pluggy Example",
+    "tree": {
+        "$path": "src",
+
+        "Packages": {
+            "$className": "Folder",
+            "Pluggy": {
+                "$path": "../packages/pluggy"
+            }
+        }
+    }
+}

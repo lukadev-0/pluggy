@@ -1,0 +1,11 @@
+{
+    "name": "Pluggy Example",
+    "tree": {
+        "$className": "DataModel",
+        "ServerStorage": {
+            "Example": {
+                "$path": "."
+            }
+        }
+    }
+}

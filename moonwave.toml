@@ -1,0 +1,6 @@
+title = "Pluggy"
+autoSectionPath = "packages"
+
+[home]
+enabled = true
+includeReadme = true
