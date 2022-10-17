@@ -19,16 +19,8 @@ return Pluggy.new({
 						:label("Always Clickable")
 						:icon("rbxassetid://0")
 						:tooltip("This button is always clickable")
-						:clickableWhenViewportHidden(true),
+						:clickableWhenViewportHidden(),
 				}),
 		})
-
-		task.wait(10)
-		pluggy.toolbars.myToolbar.instance:Destroy()
-		for _, button in pluggy.toolbars.myToolbar.buttons do
-			button.instance:Destroy()
-		end
-
-		print("destroyed")
 	end,
 })

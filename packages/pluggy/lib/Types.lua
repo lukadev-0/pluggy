@@ -64,10 +64,7 @@ export type ToolbarButtonBuilder = {
 	label: (self: ToolbarButtonBuilder, label: string) -> ToolbarButtonBuilder,
 	icon: (self: ToolbarButtonBuilder, icon: ToolbarButtonIcon) -> ToolbarButtonBuilder,
 	tooltip: (self: ToolbarButtonBuilder, tooltip: string) -> ToolbarButtonBuilder,
-	clickableWhenViewportHidden: (
-		self: ToolbarButtonBuilder,
-		clickableWhenViewportHidden: boolean
-	) -> ToolbarButtonBuilder,
+	clickableWhenViewportHidden: (self: ToolbarButtonBuilder) -> ToolbarButtonBuilder,
 }
 
 return nil

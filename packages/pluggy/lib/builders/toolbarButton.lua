@@ -38,8 +38,8 @@ end
 	@within ToolbarButtonBuilder
 	@return ToolbarButtonBuilder
 ]=]
-function ToolbarButtonBuilder:clickableWhenViewportHidden(clickableWhenViewportHidden: boolean)
-	self._data.clickableWhenViewportHidden = clickableWhenViewportHidden
+function ToolbarButtonBuilder:clickableWhenViewportHidden()
+	self._data.clickableWhenViewportHidden = true
 	return self
 end
 
