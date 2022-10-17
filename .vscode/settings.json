@@ -1,3 +1,4 @@
 {
-    "robloxLsp.typeChecking.mode": "Non Strict"
+    "robloxLsp.typeChecking.mode": "Non Strict",
+    "conventionalCommits.scopes": ["pluggy"]
 }
