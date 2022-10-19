@@ -1,12 +1,12 @@
 local Pluggy = require(script.Parent.Packages.Pluggy)
 
+local p = Pluggy.Builders
+
 return Pluggy.new({
 	name = "Example",
 	start = function(pluggy: Pluggy.Pluggy)
-		local p = pluggy.builders
-
 		-- stylua: ignore
-		p.build({
+		pluggy:build({
 			myToolbar = p.toolbar
 				:name("My Toolbar")
 				:buttons({

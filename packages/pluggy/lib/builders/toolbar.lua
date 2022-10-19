@@ -37,15 +37,15 @@ function ToolbarBuilder:buttons(buttons: { [string]: Types.ToolbarButtonBuilder 
 	return self
 end
 
-function ToolbarBuilder:_build(id: string)
-	local toolbar = self._pluggy:createToolbar(id, self._data.name)
+function ToolbarBuilder:_build(id: string, pluggy: Types.Pluggy)
+	local toolbar = pluggy:createToolbar(id, self._data.name)
 	for buttonId, button in self._buttons do
 		button:_build(buttonId, toolbar)
 	end
 end
 
-local function createToolbarBuilder(pluggy: Types.Pluggy)
-	local self = { _pluggy = pluggy, _buttons = {}, _data = {} }
+local function createToolbarBuilder()
+	local self = { _buttons = {}, _data = {} }
 	return setmetatable(self, META) :: Types.ToolbarBuilder
 end
 

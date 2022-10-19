@@ -13,22 +13,8 @@ local Builders = {}
 	@within Builders
 ]=]
 
---[=[
-	@within Builders
-	@param builders { [string]: Builder }
-]=]
-local function build(builders: { [string]: Types.RootBuilder })
-	for id, builder in builders do
-		builder:_build(id)
-	end
-end
-
 local META = {
 	__index = function(t, k)
-		if k == "build" then
-			return build
-		end
-
 		local v = Builders[k]
 		if typeof(v) == "function" then
 			return v(t)
@@ -41,7 +27,7 @@ local META = {
 	@within Builders
 ]=]
 function Builders:toolbar()
-	return createToolbarBuilder(self._pluggy)
+	return createToolbarBuilder()
 end
 
 --[=[
@@ -52,9 +38,4 @@ function Builders:button()
 	return createToolbarButtonBuilder()
 end
 
-local function createBuilders(pluggy: Types.Pluggy)
-	local self = { _pluggy = pluggy }
-	return setmetatable(self, META) :: Types.Builders
-end
-
-return createBuilders
+return setmetatable({}, META) :: Types.Builders

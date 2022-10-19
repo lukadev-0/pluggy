@@ -1,7 +1,6 @@
 --!strict
 
 local Types = require(script.Types)
-local createBuilders = require(script.builders)
 
 export type PluggyOptions<TGlobals> = Types.PluggyOptions<TGlobals>
 export type ToolbarButtonIcon = Types.ToolbarButtonIcon
@@ -25,6 +24,7 @@ Pluggy.__index = Pluggy
 
 Pluggy.Toolbar = require(script.Toolbar)
 Pluggy.ToolbarButton = require(script.ToolbarButton)
+Pluggy.Builders = require(script.builders)
 
 --[=[
 	@interface PluggyOptions
@@ -92,8 +92,6 @@ function Pluggy.new<TGlobals>(options: Types.PluggyOptions<TGlobals>): Types.Plu
 
 	setmetatable(self, Pluggy)
 
-	self.builders = createBuilders(self)
-
 	return self :: Types.Pluggy
 end
 
@@ -111,6 +109,17 @@ function Pluggy:createToolbar(id: string, name: string)
 	self.toolbars[id] = toolbar
 
 	return toolbar
+end
+
+--[=[
+	Takes a table of builders and "builds" them.
+
+	@param builders { [string]: RootBuilder }
+]=]
+function Pluggy:build(builders: { [string]: Types.RootBuilder })
+	for id, builder in builders do
+		builder:_build(id, self)
+	end
 end
 
 function Pluggy:load(plugin: Plugin)

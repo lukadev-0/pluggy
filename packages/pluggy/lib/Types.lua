@@ -8,7 +8,7 @@ export type Pluggy = {
 	start: (pluggy: Pluggy) -> (),
 	createToolbar: (self: Pluggy, id: string, name: string) -> Toolbar,
 	load: (self: Pluggy, plugin: Plugin) -> (),
-	builders: Builders,
+	build: (self: Pluggy, builders: { [string]: RootBuilder }) -> (),
 }
 
 export type PluggyOptions<TGlobals> = {
@@ -48,8 +48,6 @@ export type Builder = ToolbarBuilder | ToolbarButtonBuilder
 export type RootBuilder = ToolbarBuilder
 
 export type Builders = {
-	build: (builders: { [string]: RootBuilder }) -> (),
-
 	toolbar: ToolbarBuilder,
 	button: ToolbarButtonBuilder,
 }
