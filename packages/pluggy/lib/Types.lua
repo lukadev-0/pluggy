@@ -6,7 +6,7 @@ export type Pluggy = {
 	plugin: Plugin,
 	toolbars: { [string]: Toolbar },
 	start: (pluggy: Pluggy) -> (),
-	createToolbar: (self: Pluggy, name: string) -> Toolbar,
+	createToolbar: (self: Pluggy, id: string, name: string) -> Toolbar,
 	load: (self: Pluggy, plugin: Plugin) -> (),
 	builders: Builders,
 }
