@@ -2,7 +2,7 @@
 
 -- Pluggy
 export type Pluggy = {
-	globals: table,
+	globals: { [any]: any },
 	plugin: Plugin,
 	toolbars: { [string]: Toolbar },
 	start: (pluggy: Pluggy) -> (),

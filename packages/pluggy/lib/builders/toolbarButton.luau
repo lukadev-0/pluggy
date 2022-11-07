@@ -49,7 +49,7 @@ end
 
 local function createToolbarButtonBuilder()
 	local self = { _data = {} }
-	return setmetatable(self, META) :: Types.ToolbarButtonBuilder
+	return (setmetatable(self, META) :: any) :: Types.ToolbarButtonBuilder
 end
 
 return createToolbarButtonBuilder

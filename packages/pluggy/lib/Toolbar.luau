@@ -47,7 +47,7 @@ function Toolbar.new(pluggy: Types.Pluggy, name: string): Types.Toolbar
 
 	setmetatable(self, Toolbar)
 
-	return self :: Types.Toolbar
+	return (self :: any) :: Types.Toolbar
 end
 
 --[=[

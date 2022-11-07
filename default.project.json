@@ -1,15 +1,12 @@
 {
-    "name": "fixes roblox lsp",
+    "name": "Pluggy",
     "tree": {
-        "Pluggy": { "$path": "packages/pluggy" },
-        "Example": {
-            "$path": "example",
-            "Packages": {
-                "$className": "Folder",
-                "Pluggy": {
-                    "$path": "packages/pluggy/lib"
-                }
-            }
+        "$className": "Folder",
+        "packages": {
+            "$path": "packages"
+        },
+        "example": {
+            "$path": "example"
         }
     }
 }

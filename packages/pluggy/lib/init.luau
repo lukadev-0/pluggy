@@ -92,7 +92,7 @@ function Pluggy.new<TGlobals>(options: Types.PluggyOptions<TGlobals>): Types.Plu
 
 	setmetatable(self, Pluggy)
 
-	return self :: Types.Pluggy
+	return (self :: any) :: Types.Pluggy
 end
 
 --[=[
@@ -118,7 +118,7 @@ end
 ]=]
 function Pluggy:build(builders: { [string]: Types.RootBuilder })
 	for id, builder in builders do
-		builder:_build(id, self)
+		(builder :: any):_build(id, self)
 	end
 end
 

@@ -19,6 +19,7 @@ local META = {
 		if typeof(v) == "function" then
 			return v(t)
 		end
+		return nil
 	end,
 }
 
@@ -38,4 +39,4 @@ function Builders:button()
 	return createToolbarButtonBuilder()
 end
 
-return setmetatable({}, META) :: Types.Builders
+return (setmetatable({}, META) :: any) :: Types.Builders

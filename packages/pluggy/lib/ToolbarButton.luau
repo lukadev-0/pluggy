@@ -70,7 +70,7 @@ function ToolbarButton.new(id: string, toolbar: Types.Toolbar, options: Types.To
 	self.instance = toolbar.instance:CreateButton(id, options.tooltip, self._iconId, options.label)
 	self.instance.ClickableWhenViewportHidden = options.clickableWhenViewportHidden or false
 
-	return self :: Types.ToolbarButton
+	return (self :: any) :: Types.ToolbarButton
 end
 
 --[=[
